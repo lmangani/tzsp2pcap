@@ -1,8 +1,8 @@
 # Configurable variables
-CFLAGS = -Wall -Wextra -pedantic -O2
+CFLAGS = -g -D_GNU_SOURCE -Wall -Wextra -pedantic -O2
 
 tzsp2pcap: tzsp2pcap.c
-	cc -std=c99 -o $@ $(CFLAGS) $(LDFLAGS) -lpcap $<
+	cc -std=c99 -o $@ $(CFLAGS) $(LDFLAGS) $< -lpcap
 
 .PHONY: clean all
 
